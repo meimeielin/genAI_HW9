@@ -12,7 +12,7 @@
 |---|---|
 | `AGENTS.md` | 規則手冊：目的、風格、結構、命名、寫作規則、禁止事項、驗收標準 |
 | `CLAUDE.md` | Claude 的入口，指向 AGENTS.md |
-| `reviews/_template.html` | 心得頁模板，11 個固定區塊 |
+| `reviews/_template.html` | 心得頁模板，12 個固定區塊 |
 | `data/reviews.json` | 心得清單，首頁自動讀取 |
 | `scripts/check.py` | 自動檢查新頁面有沒有照規則 |
 | `NOTES.md` | 工作日誌，記錄每次做了什麼、下次從哪裡開始 |
