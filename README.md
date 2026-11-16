@@ -14,6 +14,7 @@
 | `CLAUDE.md` | Claude 的入口，指向 AGENTS.md |
 | `reviews/_template.html` | 心得頁模板，12 個固定區塊 |
 | `data/reviews.json` | 心得清單，首頁自動讀取 |
+| `posts.html`＋`data/posts.json`＋`photos/` | 追番日常：以照片為主的貼文牆，網頁上可以上傳草稿 |
 | `scripts/check.py` | 自動檢查新頁面有沒有照規則 |
 | `NOTES.md` | 工作日誌，記錄每次做了什麼、下次從哪裡開始 |
 

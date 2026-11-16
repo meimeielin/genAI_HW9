@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>追番日常｜追番手帳</title>
+  <meta name="description" content="追番時的生活照片，一張照片一句話。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/logo.svg">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="wrap feed-wrap">
+    <header class="site-head">
+      <img class="logo" src="assets/logo.svg" alt="">
+      <h1>追番日常</h1>
+      <p class="en">DAILY SNAPSHOTS</p>
+      <p class="sub">追番時的生活紀錄，一張照片一句話。</p>
+      <nav class="site-nav">
+        <a href="index.html">全部心得</a>
+        <a href="posts.html" class="on">追番日常</a>
+        <a href="https://github.com/meimeielin/genAI_HW9">GitHub</a>
+      </nav>
+    </header>
+
+    <!-- 上傳區：照片只存在這台電腦的瀏覽器（草稿），發布流程見 AGENTS.md 8.5 -->
+    <div class="upload-bar">
+      <button class="btn-px" id="open-upload" type="button">＋ 新增貼文</button>
+    </div>
+
+    <form class="upload px-box" id="upload" hidden>
+      <div class="bar-top"><i></i>NEW POST</div>
+      <div class="upload-body">
+        <label class="drop" id="drop">
+          <input type="file" id="photo" accept="image/*" required>
+          <img id="preview" alt="" hidden>
+          <span id="drop-hint">📷 點這裡選一張照片</span>
+        </label>
+        <label class="field"><span>想說的話（100 字內）</span>
+          <textarea id="caption" maxlength="100" rows="3" required placeholder="今天邊吃布丁邊追《孤獨搖滾！》"></textarea>
+        </label>
+        <label class="field"><span>照片說明（給看不到圖的人，例如：桌上的布丁和筆電）</span>
+          <input type="text" id="alt" maxlength="60" required>
+        </label>
+        <div class="field-row">
+          <label class="field"><span>日期</span><input type="date" id="date" required></label>
+          <label class="field"><span>相關心得（可不選）</span><select id="review"><option value="">－ 無 －</option></select></label>
+        </div>
+        <p class="hint">⚠️ 只放自己拍的照片，不要放動漫截圖或官方圖。拍到別人的臉要先問過對方。</p>
+        <div class="actions">
+          <button class="btn-px" type="submit">存成草稿</button>
+          <button class="btn-px ghost" type="button" id="cancel">取消</button>
+        </div>
+      </div>
+    </form>
+
+    <main class="feed" id="feed"></main>
+
+    <footer class="site-foot">
+      追番手帳・依照 <a href="https://github.com/meimeielin/genAI_HW9/blob/main/AGENTS.md">AGENTS.md</a> 規則與 AI 共同維護
+    </footer>
+  </div>
+  <script src="assets/posts.js"></script>
+</body>
+</html>

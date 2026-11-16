@@ -125,6 +125,50 @@ for p in REVIEWS.glob("*.html"):
     if not p.name.startswith("_") and p.stem not in seen:
         err(f"reviews/{p.name} 沒有列在 reviews.json，首頁看不到它")
 
+# ---- 4. 追番日常貼文（AGENTS.md 4.6） ----
+PHOTOS = ROOT / "photos"
+try:
+    posts = json.loads((ROOT / "data" / "posts.json").read_text(encoding="utf-8"))
+except Exception as e:  # noqa: BLE001
+    err(f"data/posts.json 無法解析：{e}")
+    posts = []
+used = set()
+post_ids = set()
+for i, p in enumerate(posts):
+    who = f"貼文 {p.get('id', i + 1)}"
+    for k in ["id", "image", "date", "caption", "alt"]:
+        if not p.get(k):
+            err(f"{who}：缺少欄位 {k}")
+    pid = p.get("id", "")
+    if pid in post_ids:
+        err(f"{who}：id 重複")
+    post_ids.add(pid)
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}-\d+", pid):
+        err(f"{who}：id 格式要是 YYYY-MM-DD-n")
+    if p.get("image") != f"photos/{pid}.jpg":
+        err(f"{who}：image 必須是 photos/{pid}.jpg")
+    img = ROOT / p.get("image", "")
+    used.add(img.name)
+    if not img.is_file():
+        err(f"{who}：找不到照片 {p.get('image')}")
+    elif img.stat().st_size > 1_000_000:
+        err(f"{who}：照片超過 1MB，請先縮小（最長邊 1080px）")
+    if not str(p.get("date", "")).startswith(pid[:10]):
+        err(f"{who}：date 要和 id 開頭的日期一樣")
+    if len(p.get("caption", "")) > 100:
+        err(f"{who}：文字超過 100 字")
+    if p.get("review") and p["review"] not in seen:
+        err(f"{who}：review「{p['review']}」不是現有心得的 slug")
+if [p.get("date") for p in posts] != sorted([p.get("date") for p in posts], reverse=True):
+    err("posts.json 要照日期由新到舊排列")
+for f in PHOTOS.glob("*"):
+    if f.name.startswith("."):
+        continue
+    if f.suffix != ".jpg":
+        err(f"photos/{f.name}：照片一律用 .jpg")
+    elif f.name not in used:
+        err(f"photos/{f.name} 沒有列在 posts.json")
+
 # ---- 結果 ----
 for w in warnings:
     print(f"⚠️  {w}")
@@ -133,4 +177,4 @@ for e in errors:
 if errors:
     print(f"\n共 {len(errors)} 個錯誤，請修正後再跑一次。")
     sys.exit(1)
-print(f"✅ 檢查通過：{len(data)} 篇心得，格式全部正確。")
+print(f"✅ 檢查通過：{len(data)} 篇心得、{len(posts)} 則貼文，格式全部正確。")
