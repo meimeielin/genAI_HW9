@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+  心得頁模板（AGENTS.md 第 4 節）
+  使用方式：複製成 reviews/<slug>.html，把所有 {{...}} 換掉，並刪除這段註解。
+  區塊順序不可調換、不可省略。
+-->
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{中文片名}}｜追番手帳</title>
+  <meta name="description" content="{{一句話短評}}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="accent-{{代表色}}">
+  <div class="wrap review">
+    <!-- 1. 返回連結 -->
+    <a class="back" href="../index.html">← 回到手帳</a>
+
+    <!-- 2. 標題區 -->
+    <header class="review-head px-box">
+      <div class="bar-top"><i></i>ANIME LOG</div>
+      <div class="inner">
+        <div class="emoji">{{emoji}}</div>
+        <h1>{{中文片名}}</h1>
+        <p class="original">{{原文片名}}</p>
+      </div>
+      <span class="score-badge">{{總分}}<small> / 10</small></span>
+    </header>
+
+    <!-- 3. 基本資料 -->
+    <dl class="meta px-box">
+      <dt>首播</dt><dd>{{首播年份}}</dd>
+      <dt>集數</dt><dd>{{集數}}</dd>
+      <dt>觀看時間</dt><dd>{{YYYY-MM}}</dd>
+      <dt>狀態</dt><dd>{{已完結／追番中／棄番}}</dd>
+      <dt>類型</dt><dd><span class="tag">{{類型1}}</span><span class="tag">{{類型2}}</span></dd>
+    </dl>
+
+    <!-- 4. 一句話短評（30 字內，不能有雷） -->
+    <blockquote class="oneliner">{{一句話短評}}</blockquote>
+
+    <!-- 5. 評分（--score 和數字要一致） -->
+    <table class="scores px-box">
+      <tr><th>劇情</th><td><div class="bar"><span style="--score: {{劇情}}"></span></div></td><td class="num">{{劇情}}</td></tr>
+      <tr><th>角色</th><td><div class="bar"><span style="--score: {{角色}}"></span></div></td><td class="num">{{角色}}</td></tr>
+      <tr><th>作畫</th><td><div class="bar"><span style="--score: {{作畫}}"></span></div></td><td class="num">{{作畫}}</td></tr>
+      <tr><th>音樂</th><td><div class="bar"><span style="--score: {{音樂}}"></span></div></td><td class="num">{{音樂}}</td></tr>
+      <tr><th>配音</th><td><div class="bar"><span style="--score: {{配音}}"></span></div></td><td class="num">{{配音}}</td></tr>
+      <tr class="total"><th>總分</th><td><div class="bar"><span style="--score: {{總分}}"></span></div></td><td class="num">{{總分}}</td></tr>
+    </table>
+
+    <!-- 6. 故事簡介（無雷，100 字內） -->
+    <section id="story">
+      <h2>故事簡介</h2>
+      <p>{{故事簡介}}</p>
+    </section>
+
+    <!-- 7. 我喜歡的地方（2～5 點） -->
+    <section id="likes">
+      <h2>我喜歡的地方</h2>
+      <ul>
+        <li>{{喜歡1}}</li>
+        <li>{{喜歡2}}</li>
+      </ul>
+    </section>
+
+    <!-- 8. 我不喜歡的地方（1～3 點） -->
+    <section id="dislikes">
+      <h2>我不喜歡的地方</h2>
+      <ul>
+        <li>{{不喜歡1}}</li>
+      </ul>
+    </section>
+
+    <!-- 9. 印象最深的一幕（有雷就包進 details.spoiler） -->
+    <section id="moment">
+      <h2>印象最深的一幕</h2>
+      <p>{{不劇透的前情提要}}</p>
+      <details class="spoiler">
+        <summary>⚠️ 有雷，點開看</summary>
+        <p>{{有雷的內容}}</p>
+      </details>
+    </section>
+
+    <!-- 10. 配音員筆記（1～4 位，格式見 AGENTS.md 4.5） -->
+    <section id="voice">
+      <h2>配音員筆記</h2>
+      <ul class="cast">
+        <li class="px-box"><b>{{角色名}}</b>（CV：{{配音員名}}）— {{我對這位配音的感想}}</li>
+      </ul>
+    </section>
+
+    <!-- 11. 推薦給誰（rec-1／rec-2／rec-3） -->
+    <section id="recommend">
+      <h2>推薦給誰</h2>
+      <p>{{推薦對象}}</p>
+      <span class="rec rec-{{推薦指數}}"></span>
+    </section>
+
+    <!-- 12. 頁尾 -->
+    <footer class="review-foot">
+      撰寫於 {{YYYY-MM-DD}}・最後更新 {{YYYY-MM-DD}}
+    </footer>
+  </div>
+</body>
+</html>

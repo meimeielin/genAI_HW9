@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>追番手帳｜我的動漫心得</title>
+  <meta name="description" content="我的個人動漫心得紀錄：評分、喜歡與不喜歡的地方、推薦給誰。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/logo.svg">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-head">
+      <img class="logo" src="assets/logo.svg" alt="">
+      <h1>追番手帳</h1>
+      <p class="en">ANIME QUEST LOG</p>
+      <p class="sub">看完一部，記下一頁。我的動漫心得紀錄。</p>
+      <nav class="site-nav">
+        <a href="index.html">全部心得</a>
+        <a href="https://github.com/meimeielin/genAI_HW9">GitHub</a>
+      </nav>
+      <div class="stats">
+        <div class="px-box"><b id="stat-count">0</b>篇心得</div>
+        <div class="px-box"><b id="stat-avg">-</b>平均分數</div>
+        <div class="px-box"><b id="stat-cv">0</b>位配音員</div>
+      </div>
+    </header>
+
+    <div class="filters" id="filters"></div>
+    <div class="cv-wrap"><select id="cv-filter" aria-label="依配音員篩選"></select></div>
+    <main class="cards" id="cards"></main>
+
+    <footer class="site-foot">
+      追番手帳・依照 <a href="https://github.com/meimeielin/genAI_HW9/blob/main/AGENTS.md">AGENTS.md</a> 規則與 AI 共同維護
+    </footer>
+  </div>
+  <script src="assets/main.js"></script>
+</body>
+</html>
