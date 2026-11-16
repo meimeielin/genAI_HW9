@@ -1,1 +1,95 @@
-[]
+[
+  {
+    "slug": "bocchi-the-rock",
+    "title": "孤獨搖滾！",
+    "original": "ぼっち・ざ・ろっく！",
+    "emoji": "🎸",
+    "accent": "sakura",
+    "year": 2022,
+    "status": "已完結",
+    "watched": "2026-10",
+    "score": 9.5,
+    "genres": [
+      "音樂",
+      "搞笑",
+      "日常",
+      "校園"
+    ],
+    "cast": [
+      {
+        "role": "後藤一里",
+        "cv": "青山吉能"
+      },
+      {
+        "role": "伊地知虹夏",
+        "cv": "鈴代紗弓"
+      },
+      {
+        "role": "喜多郁代",
+        "cv": "長谷川育美"
+      }
+    ],
+    "oneliner": "每次想躲起來，都被音樂拉回人群裡。",
+    "written": "2026-11-16"
+  },
+  {
+    "slug": "your-name",
+    "title": "你的名字",
+    "original": "君の名は。",
+    "emoji": "🌠",
+    "accent": "sky",
+    "year": 2016,
+    "status": "已完結",
+    "watched": "2026-10",
+    "score": 9,
+    "genres": [
+      "戀愛",
+      "奇幻"
+    ],
+    "cast": [
+      {
+        "role": "立花瀧",
+        "cv": "神木隆之介"
+      },
+      {
+        "role": "宮水三葉",
+        "cv": "上白石萌音"
+      }
+    ],
+    "oneliner": "有些相遇，連忘記之後都還想再找一次。",
+    "written": "2026-11-16"
+  },
+  {
+    "slug": "frieren",
+    "title": "葬送的芙莉蓮",
+    "original": "葬送のフリーレン",
+    "emoji": "🪄",
+    "accent": "lavender",
+    "year": 2023,
+    "status": "已完結",
+    "watched": "2026-09",
+    "score": 9.5,
+    "genres": [
+      "奇幻",
+      "冒險",
+      "治癒",
+      "戰鬥"
+    ],
+    "cast": [
+      {
+        "role": "芙莉蓮",
+        "cv": "種﨑敦美"
+      },
+      {
+        "role": "費倫",
+        "cv": "市ノ瀬加那"
+      },
+      {
+        "role": "欣梅爾",
+        "cv": "岡本信彦"
+      }
+    ],
+    "oneliner": "旅程結束以後，才慢慢懂得同行的意義。",
+    "written": "2026-11-16"
+  }
+]
